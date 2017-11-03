@@ -52,7 +52,7 @@ task usercontrol(){
 		//Left joystick controls left wheels
 		motor[L] = vexRT[Ch3]*(0.65);
 
-		//Above, we mutiplied the above values by 0.5 to reduce the power going to the motors by 35% in order to reduce overheating
+		//Above, we mutiplied the above values by 0.5 to reduce the power going to the motors by 50% in order to reduce overheating
 
 		//Tower controlled by buttons 5U and 5D
 		if(vexRT[Btn5D]){
