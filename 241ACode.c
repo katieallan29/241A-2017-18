@@ -60,18 +60,14 @@ task usercontrol(){
 			motor[TowerL2] = -100;
 			motor[TowerR1] = -100;
 			motor[TowerL2] = -100;
-			wait1Msec(1);
-			motor[TowerL1] = 0;
-			motor[TowerL2] = 0;
-			motor[TowerR1] = 0;
-			motor[TowerL2] = 0;
 		}
-		if(vexRT[Btn5U]){
+		else if(vexRT[Btn5U]){
 			motor[TowerL1] = 100;
 			motor[TowerL2] = 100;
 			motor[TowerR1] = 100;
 			motor[TowerL2] = 100;
-			wait1Msec(1);
+		}
+		else{
 			motor[TowerL1] = 0;
 			motor[TowerL2] = 0;
 			motor[TowerR1] = 0;
@@ -80,12 +76,11 @@ task usercontrol(){
 		//Claw opening and closing controlled by Buttons 7U and 8U
 		if(vexRT[Btn7U]){
 			motor[Claw] = 100;
-			wait1Msec(1);
-			motor[Claw] = 0;
 		}
-		if(vexRT[Btn8U]){
+		else if(vexRT[Btn8U]){
 			motor[Claw] = -100;
-			wait1Msec(1);
+		}
+		else{
 			motor[Claw] = 0;
 		}
 		if(vexRT[Btn8D]){
