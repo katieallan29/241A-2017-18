@@ -1,5 +1,5 @@
 #pragma config(Motor,  port2,           L,             tmotorVex393_MC29, openLoop)
-#pragma config(Motor,  port3,           R,             tmotorVex393_MC29, openLoop, reversed)
+#pragma config(Motor,  port3,           R,             tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port4,           TowerL1,       tmotorVex393_MC29, openLoop, reversed)
 #pragma config(Motor,  port5,           TowerL2,       tmotorVex393_MC29, openLoop, reversed)
 #pragma config(Motor,  port6,           TowerR1,       tmotorVex393_MC29, openLoop, reversed)
@@ -14,7 +14,7 @@
 void pre_auton (){
 }
 task autonomous () {
-		motor[L] = 100;
+		motor[L] = -100;
 		motor[R] = 100;
 		wait1Msec(4000);
 		motor[L] = 0;
