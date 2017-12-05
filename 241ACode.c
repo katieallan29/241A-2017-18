@@ -1,3 +1,5 @@
+#pragma config(Sensor, dgtl1,  LEncoder,       sensorQuadEncoder)
+#pragma config(Sensor, dgtl3,  REncoder,       sensorQuadEncoder)
 #pragma config(Motor,  port2,           L,             tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port3,           R,             tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port4,           TowerL1,       tmotorVex393_MC29, openLoop, reversed)
@@ -14,36 +16,51 @@
 void pre_auton (){
 }
 task autonomous () {
-		motor[L] = -100;
-		motor[R] = 100;
-		wait1Msec(4000);
-		motor[L] = 0;
-		motor[R] = 0;
+		//Lift tower
+		motor[TowerL1] = 100;
+		motor[TowerL2] = 100;
+		motor[TowerR1] = 100;
+		motor[TowerR2] = 100;
+		wait10Msec(1500);
+		motor[TowerL1] = 0;
+		motor[TowerL2] = 0;
+		motor[TowerR1] = 0;
+		motor[TowerR2] = 0;
 
-		/*
-		//WIP Autonomous
-		//How many inches the bot moves in 1 second
-		int secIn = 33.52;
-		//Move forward for 49 inches
-		motor[L] = 127;
-		motor[R] = 127;
-		wait1Msec((49/secIn)*1000);
-		//Move backward for 49 inches
-		motor[R] = -127;
-		motor[L] = -127;
-		wait1Msec((49/secIn)*1000);
-		//Rotate bot clockwise 130 degrees
-		motor[R] = -127;
-		motor[L] = 127;
-		wait1Msec(1300);
-		//Move forward 12 inches
-		motor[R] = 127;
-		motor[L] = 127;
-		wait1Msec((12/secIn)*1000);
-		//Stop
-		motor[R] = 0;
-		motor[L] = 0;
-		*/
+		//Close Claw partway
+		motor[Claw] = 100;
+		wait10Msec(500);
+		motor[Claw] = 0;
+
+		//Lower tower
+		motor[TowerL1] = -100;
+		motor[TowerL2] = -100;
+		motor[TowerR1] = -100;
+		motor[TowerR2] = -100;
+		wait10Msec(1500);
+		motor[TowerL1] = 0;
+		motor[TowerL2] = 0;
+		motor[TowerR1] = 0;
+		motor[TowerR2] = 0;
+
+		//Close Claw fully
+		motor[Claw] = 100;
+		wait10Msec(1000);
+		motor[Claw] = 0;
+
+		//Lift tower
+		motor[TowerL1] = 100;
+		motor[TowerL2] = 100;
+		motor[TowerR1] = 100;
+		motor[TowerR2] = 100;
+		wait10Msec(1500);
+		motor[TowerL1] = 0;
+		motor[TowerL2] = 0;
+		motor[TowerR1] = 0;
+		motor[TowerR2] = 0;
+
+
+
 }
 task usercontrol(){
 	while (1==1){
