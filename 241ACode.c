@@ -36,14 +36,14 @@ task autonomous () {
 
 		//Close Claw partway
 		motor[Claw] = -100;
-		wait1Msec(400);
-		motor[Claw] = 0;
+		wait1Msec(125);
+		motor[Claw] =  0;
 
 		//Lower Tower
-		motor[TowerL1] = -100;
-		motor[TowerL2] = -100;
-		motor[TowerR1] = -100;
-		motor[TowerR2] = -100;
+		motor[TowerL1] = -63;
+		motor[TowerL2] = -63;
+		motor[TowerR1] = -63;
+		motor[TowerR2] = -63;
 		wait1Msec(1000);
 		motor[TowerL1] = 0;
 		motor[TowerL2] = 0;
@@ -51,9 +51,9 @@ task autonomous () {
 		motor[TowerR2] = 0;
 
 		//Close Claw fully
-		motor[Claw] = -100;
-		wait10Msec(600);
-		motor[Claw] = 0;
+		motor[Claw] = -127;
+		wait1Msec(800);
+		//NOT STOPPING CLAW TO ENSURE CONE REMAINS IN THE CLAW
 
 		//Lift Tower
 		motor[TowerL1] = 100;
@@ -67,20 +67,18 @@ task autonomous () {
 		motor[TowerR2] = 0;
 
 		//Move forward
-		while(SensorValue[LEncoder] <= 500 && SensorValue[REncoder] <= 500){
-			if(SensorValue[LEncoder] <= 500){
+		SensorValue[REncoder] = 0;
+		SensorValue[LEncoder] = 0;
+		while(SensorValue[LEncoder] <= 200 && SensorValue[REncoder] <= 200){
+			if(SensorValue[LEncoder] <= 200){
 				motor[L] = 127;
 			}
-			else{
-				motor[L] = 0;
-			}
-			if(SensorValue[REncoder] <= 500){
+			if(SensorValue[REncoder] <= 200){
 				motor[R] = 127;
 			}
-			else{
-				motor[R] = 0;
-			}
 		}
+		motor[L] = 0;
+		motor[R] = 0;
 
 		//Lower Tower Slightly
 		motor[TowerL1] = -100;
@@ -97,6 +95,8 @@ task autonomous () {
 		motor[Claw] = 100;
 		wait10Msec(500);
 		motor[Claw] = 0;
+
+
 }
 task usercontrol(){
 	while (1==1){
