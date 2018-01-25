@@ -74,6 +74,10 @@ task autonomous () {
 		clawCtrl(100, 500, true);
 }
 task usercontrol(){
+	displayLCDPos(0, 0);
+	displayNextLCDString("Battery:");
+	displayLCDPos(0, 9);
+	displayNextLCDNumber(nAvgBatteryLevel);
 	while (1==1){
 		//Right joystick controls right wheels
 		motor[R] = vexRT[Ch3]*(0.65);
