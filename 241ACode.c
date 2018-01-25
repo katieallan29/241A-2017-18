@@ -48,7 +48,6 @@ void move(int ticks){
 void pre_auton (){
 }
 task autonomous () {
-<<<<<<< HEAD
 		//Lift Tower
 		towerCtrl(100, 1000);
 
@@ -73,90 +72,6 @@ task autonomous () {
 
 		//Open Claw
 		clawCtrl(100, 500, true);
-
-=======
-		/*motor[L] = -100;
-		motor[R] = 100;
-		wait1Msec(4000);
-		motor[L] = 0;
-		motor[R] = 0;*/
-		//WIP AUTONOMOUS
-
-		//Lift Tower
-		motor[TowerL1] = 100;
-		motor[TowerL2] = 100;
-		motor[TowerR1] = 100;
-		motor[TowerR2] = 100;
-		wait1Msec(1000);
-		motor[TowerL1] = 0;
-		motor[TowerL2] = 0;
-		motor[TowerR1] = 0;
-		motor[TowerR2] = 0;
-
-		//Close Claw partway
-		motor[Claw] = -100;
-		wait1Msec(125);
-		motor[Claw] =  0;
-
-		//Lower Tower
-		motor[TowerL1] = -63;
-		motor[TowerL2] = -63;
-		motor[TowerR1] = -63;
-		motor[TowerR2] = -63;
-		wait1Msec(1000);
-		motor[TowerL1] = 0;
-		motor[TowerL2] = 0;
-		motor[TowerR1] = 0;
-		motor[TowerR2] = 0;
-
-		//Close Claw fully
-		motor[Claw] = -127;
-		wait1Msec(800);
-		//NOT STOPPING CLAW TO ENSURE CONE REMAINS IN THE CLAW
-
-		//Lift Tower
-		motor[TowerL1] = 100;
-		motor[TowerL2] = 100;
-		motor[TowerR1] = 100;
-		motor[TowerR2] = 100;
-		wait1Msec(1000);
-		motor[TowerL1] = 0;
-		motor[TowerL2] = 0;
-		motor[TowerR1] = 0;
-		motor[TowerR2] = 0;
-
-		//Move forward
-		SensorValue[REncoder] = 0;
-		SensorValue[LEncoder] = 0;
-		while(SensorValue[LEncoder] <= 200 && SensorValue[REncoder] <= 200){
-			if(SensorValue[LEncoder] <= 200){
-				motor[L] = 127;
-			}
-			if(SensorValue[REncoder] <= 200){
-				motor[R] = 127;
-			}
-		}
-		motor[L] = 0;
-		motor[R] = 0;
-
-		//Lower Tower Slightly
-		motor[TowerL1] = -100;
-		motor[TowerL2] = -100;
-		motor[TowerR1] = -100;
-		motor[TowerR2] = -100;
-		wait1Msec(200);
-		motor[TowerL1] = 0;
-		motor[TowerL2] = 0;
-		motor[TowerR1] = 0;
-		motor[TowerR2] = 0;
-
-		//Open Claw
-		motor[Claw] = 100;
-		wait10Msec(500);
-		motor[Claw] = 0;
-
-
->>>>>>> master
 }
 task usercontrol(){
 	while (1==1){
