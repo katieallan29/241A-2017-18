@@ -1,7 +1,7 @@
 #pragma config(Sensor, dgtl1,  LEncoder,       sensorQuadEncoder)
 #pragma config(Sensor, dgtl3,  REncoder,       sensorQuadEncoder)
 #pragma config(Motor,  port2,           L,             tmotorVex393_MC29, openLoop, reversed)
-#pragma config(Motor,  port3,           R,             tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port9,           R,             tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port4,           TowerL1,       tmotorVex393_MC29, openLoop, reversed)
 #pragma config(Motor,  port5,           TowerL2,       tmotorVex393_MC29, openLoop, reversed)
 #pragma config(Motor,  port6,           TowerR1,       tmotorVex393_MC29, openLoop, reversed)
@@ -226,16 +226,16 @@ task usercontrol(){
 
 		//Tower controlled by buttons 5U and 5D
 		if(vexRT[Btn5D]){
-			motor[TowerL1] = -110;
-			motor[TowerL2] = -110;
-			motor[TowerR1] = -110;
-			motor[TowerL2] = -110;
+			motor[TowerL1] = -105;
+			motor[TowerL2] = -105;
+			motor[TowerR1] = -105;
+			motor[TowerL2] = -105;
 		}
 		else if(vexRT[Btn5U]){
-			motor[TowerL1] = 110;
-			motor[TowerL2] = 110;
-			motor[TowerR1] = 110;
-			motor[TowerL2] = 110;
+			motor[TowerL1] = 105;
+			motor[TowerL2] = 105;
+			motor[TowerR1] = 105;
+			motor[TowerL2] = 105;
 		}
 		else{
 			motor[TowerL1] = 0;
