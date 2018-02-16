@@ -181,13 +181,15 @@ task autonomous () {
 		clawCtrl(100, 500, true);
 	}
 	else if(Program == 2){
-		move(450);
+		move(400);
 		towerCtrl(100, 1000);
 		clawCtrl(-127, 125, true);
 		towerCtrl(-100, 1000);
 		clawCtrl(-127, 800, false);
-		moveBack(450);
+		moveBack(400);
 		spinLeft(450);
+		move(500);
+		clawCtrl(100, 500, true);
 	}
 	else{
 		//Lift Tower
